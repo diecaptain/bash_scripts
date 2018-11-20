@@ -1,0 +1,24 @@
+#!/bin/bash -x
+
+# Script License: GPL
+# Dependensies: ffmpeg (You need ffmped installed in your system)
+# Usage: "Takes single/multiple file paths as input and converts them to mp3"
+# Example: "./convert_vid.sh Downloads/Amsterdam\ Imagine\ Dragons.flv Downloads/BrownRang.mp4" converts 'Downloads/Amsterdam Imagine Dragons.flv' and 'Downloads/BrownRang.mp4' to 'Downloads/Amsterdam Imagine Dragons.flv.mp3' and 'Downloads/BrownRang.mp4.mp3'
+# script by pahnin
+
+if [ $# -gt 0 ]; then
+    while test $# -gt 0
+    do
+        Filo=${1//\ /\\\ };
+        echo "
+Converting $Filo
+Command: ffmpeg -i $Filo -vn $Filo.mp3"
+        eval "ffmpeg -i $Filo -vn $Filo.mp3 "
+        shift
+    done
+else
+    echo "
+Which video file to convert?
+Script usage ./convert.sh <video filepath> ...
+";
+fi
