@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# make_page1 - A script to produce an HTML file
+
+title="System Information of $HOSTNAME"
+present_time=$(date +"%x %r %Z")
+time_stamp="Updated on $present_time by $USER"
+
+cat <<- _EOF_
+    <HTML>
+    <HEAD>
+        <TITLE>
+        $title 
+        </TITLE>
+    </HEAD>
+
+    <BODY>
+       <H1> $title </H1>
+       <P> $time_stamp </P>
+    </BODY>
+    </HTML>
+_EOF_
