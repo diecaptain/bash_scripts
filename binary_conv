@@ -2,36 +2,10 @@
 
 decimal_num=0
 result=0
-# temp1=0
-# temp2=0
-# temp3=0
 
 echo -n "Enter the decimal number here --> "
 read decimal_num
 
-#if [ "$decimal_num" -ge "2" ]; then
-#until [ "$decimal_num" -lt "2" ]; do
-#remainder=$((decimal_num % 2))
-#result=$((result + remainder * 10 ^ num)) 
-#num=$((num + 1))
-#decimal_num=$((decimal_num / 2)) 
-# decimal_num = $temp1
-# result = $temp2
-# num = $temp3
-#done  
-#echo ""
-#else
- #echo ""
-  #if [ "$num" -ge "1" ]; then
-   # result=$((result + decimal_num * 10 ^ num))
-    #echo ""
-     # else
-      # echo ""
-       # result=$((result + decimal_num))
-      #fi
-      #echo ""
-  #fi
-#echo ""
 while [ "$decimal_num" -gt "0" ]; do
 result=$((result * 10 + decimal_num % 2))
 decimal_num=$((decimal_num / 2))
