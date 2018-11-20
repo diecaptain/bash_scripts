@@ -1,0 +1,32 @@
+#!/bin/bash -x
+# factorial function
+
+number=0
+echo -n "Enter the number here --> "
+read number
+
+function fact
+ {
+   temp=$number
+   result=$number
+   echo ""
+    if [ "$number" = "0" ]; then
+       echo -n "factorial of $number is $((1)) "
+    elif [ "$number" = "1" ]; then
+       echo -n "factorial of $number is $((1)) "
+    else
+   echo ""
+    while [ "$number" -ge "2" ]; do
+       number=$((number - 1))
+       result=$((result * number))
+       done
+     echo ""
+      echo -n "factorial of $temp is $result "
+    fi
+     echo "" 
+ } # end of fact function
+
+# main
+cat <<- _EOF_
+$(fact)
+_EOF_
