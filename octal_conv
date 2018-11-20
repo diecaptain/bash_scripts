@@ -1,0 +1,19 @@
+#!/bin/bash -x
+
+decimal_num=0
+result=0
+
+echo -n "Enter the decimal number here --> "
+read decimal_num
+
+while [ "$decimal_num" -gt "0" ]; do
+result=$((result * 10 + decimal_num % 8))
+decimal_num=$((decimal_num / 8))
+done
+len=${#result}
+for ((i=0;i<len;i++)); do 
+result=${result:i*2:1}$result; 
+done; 
+result=${result:0:len}
+echo -n "The equivalent octal number is --> "
+echo -n " $result"
