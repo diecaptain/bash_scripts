@@ -1,0 +1,61 @@
+#!/bin/bash -x
+
+first_num=0
+second_num=0
+
+echo -n "Enter the first number --> "
+read first_num
+echo -n "Enter the second number -> "
+read second_num
+
+
+selection=
+#y = continue
+#n = exit
+
+until [ "$selection" = "n" ]; do
+
+echo -n "Enter your choice whether to continue Y/N --> "
+  read selection
+    case $selection in
+       y ) echo "you chose to continue "
+            ;;
+       n ) echo "you chose to exit "
+            ;;
+       * ) echo "please select either y or n "
+            ;;
+     esac
+echo ""
+
+     if [ "$selection" = "y" ]; then
+
+echo -n "Enter a number between 1 to 6 --> "
+#1 = sum
+#2 = difference
+#3 = multiplication
+#4 = division
+#5 = percentile
+#6 = exponent
+read control_num
+echo ""
+
+case $control_num in
+  1 )  echo "first number + second number = $((first_num + second_num))"
+   	;;
+  2 )  echo "first number - second number = $((first_num - second_num))"
+	;;
+  3 )  echo "first number * second number = $((first_num * second_num))"
+	;;
+  4 )  echo "first number / second number = $((first_num / second_num))"
+	;;
+  5 )  echo "first number % second number = $((first_num % second_num))"
+	;;
+  6 )  echo "first number raised to the"
+       echo "power of the second number   = $((first_num ** second_num))"
+        ;;
+  * ) echo "please select from 1 to 6 "
+        ;;
+esac
+     fi
+       
+done
