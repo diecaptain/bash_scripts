@@ -19,6 +19,6 @@ Command: ffmpeg -i $Filo -vn $Filo.mp3"
 else
     echo "
 Which video file to convert?
-Script usage ./convert.sh <video filepath> ...
+Script usage ./vid_mp3.sh <video filepath> ...
 ";
 fi
